@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  matrix-rotator:
+    build: ./matrix-rotator
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./matrix-rotator:/app
+    environment:
+      - NODE_ENV=production
+      - API_KEY=interseguro2025
+      - ANALYZER_API_URL=http://matrix-analyzer:3002/api/analyzer
+
+
+  matrix-analyzer:
+    build: ./matrix-analyzer
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./matrix-analyzer:/app
+    environment:
+      - NODE_ENV=production
+      - API_KEY=interseguro2025
+
