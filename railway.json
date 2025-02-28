@@ -1,0 +1,16 @@
+{
+    "services": [
+      {
+        "name": "matrix-rotator",
+        "rootDirectory": "matrix-rotator",
+        "buildCommand": "docker build -t matrix-rotator .",
+        "startCommand": "docker run -p 3001:3001 matrix-rotator"
+      },
+      {
+        "name": "matrix-analyzer",
+        "rootDirectory": "matrix-analyzer",
+        "buildCommand": "docker build -t matrix-analyzer .",
+        "startCommand": "docker run -p 3002:3002 matrix-analyzer"
+      }
+    ]
+  }
